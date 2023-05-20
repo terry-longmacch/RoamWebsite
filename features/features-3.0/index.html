@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737866805429">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737869507457">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.737866805429" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.737869507457" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737866805429" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737869507457" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737866805429" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737869507457" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,53 +180,18 @@
 </doc-anchor-target>
 <p>List of new features and changes in Roam 3.0</p>
 <p><a href="https://github.com/terry-longmacch/Roam/releases/tag/3.0.8">Release Files</a></p>
-<p>#Changes</p>
-<ul>
-<li>[App] Only load <code v-pre>project.qgs</code> by default.</li>
-</ul>
-<p>By default Roam will only load <code v-pre>project.qgs</code> unless <code v-pre>projectfile</code> is set in <code v-pre>project.config</code>.<br />
-This will only be issue if you changed the project name after using Roam Config Manager.</p>
-<ul>
-<li>[App] New <code v-pre>--profile</code> command line option to load projects/plugins/logs, etc from profile folder
-See <a href="../../admin-guide/profiles/">Profiles</a> for more details</li>
-<li>[Project] Allow <code v-pre>[% qgisexpression %]</code> in info queries.  Will be replaced before the
-query is run.</li>
-<li>[Forms] Show GPS marker on map image in drawing widget</li>
-<li>[Forms] New timestamp option for drawing widget.</li>
-<li>[Forms] Form widget events. Events can be used to change other values or show/hide other controls.</li>
-<li>[Forms] Field expressions can now be run on Capture/Save or Both.</li>
-<li>[Mapping] Snapping enabled on all layers.</li>
-<li>[Mapping] GPS way point markers</li>
-<li>[Mapping] Red highlight for invalid geometry (Doesn&#x27;t stop the user saving feature)</li>
-<li>[Forms] Generic attachment widget (saved into _attachements, can copy or move attachment to folder)</li>
-<li>[Forms] Add section support</li>
-<li>[Forms] New top down form style.</li>
-<li>[UI] Project download status</li>
-<li>[UI] Move the status bar to the map page only.</li>
-<li>[Config] <code v-pre>image_size</code> to set fixed image size</li>
-<li>[Config] <code v-pre>smallmode: true</code> will force toolbars into icon mode at start up.</li>
-<li>[Plugins] Allow plugins to create toolbars in the map widow</li>
-<li>[API] Allow saving features while ignoring form checks. e.g Forced save.</li>
-<li>[App] Plugins folder will be found relative to roam.config</li>
-<li>[API] <code v-pre>Form.new_feature</code> can take preloaded values.</li>
-<li>[API] Add <code v-pre>zoom_to_feature</code> method</li>
-</ul>
+<doc-anchor-target id="changes">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changes">#</doc-anchor-trigger>
+        <span>Changes</span>
+    </h1>
+</doc-anchor-target>
 <doc-anchor-target id="config-manager-changes">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#config-manager-changes">#</doc-anchor-trigger>
-        <span>Config manager changes:</span>
+        <span>Config Manager changes:</span>
     </h1>
 </doc-anchor-target>
-<ul>
-<li>3126d28 Add new form style option in form config UI</li>
-<li>ecb78ce Add search config UI to config manager. Fix search for spaces in columns</li>
-<li>c607f62 Add icon picker for form. Update search icon</li>
-<li>b65b40a Add html view of project info</li>
-<li>8bd4123 Add style widget from QGIS for inline styling</li>
-<li>ca147b3 Add plugins node to show installed plugins.</li>
-<li>f742584 Rename Default to expression in config manager UI</li>
-<li>9a7c093 Add events widget</li>
-</ul>
 <doc-anchor-target id="minor-changes">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#minor-changes">#</doc-anchor-trigger>
@@ -240,26 +205,6 @@ query is run.</li>
     </h1>
 </doc-anchor-target>
 <p><a href="https://github.com/terry-longmacch/Roam/issues?q=milestone%3A2.5+is%3Aclosed">See</a> for list of closed tickets.</p>
-<ul>
-<li>Fix error for fields with spaces in info panel.</li>
-<li>c9d503d Fix image path loading with space</li>
-<li>4ab7c11 Fix #272 - Trim GPS DOP values</li>
-<li>e59cb48 Fix #297 - Disable add vertex button with GPS disconnect</li>
-<li>0e3ae16 Fix #301 - Fix missing default expression button</li>
-<li>ca036a7 Fix #306 - Fix error on no results in search</li>
-<li>e95fa92 Fix time selection in date time widget</li>
-<li>4357a19 Fix sizing of list view for long entries</li>
-<li>f9a4832 Fix image crash. Deep copy widgets config in feature form</li>
-<li>418ddaf Fix image from file loading</li>
-<li>caded27 Fix missing info dock delete logic</li>
-<li>ffcdb3e Use QgsNetworkManager for project download</li>
-<li>9600f4e Better field replacement in info panel</li>
-<li>07fc057 Fix error on no geom in geom widget</li>
-<li>2d3b01f Fix #294 - Crash on missing layer in search</li>
-<li>aa1c929 Fix crash on missing geom info</li>
-<li>df73d81 Fix show/hide of raster</li>
-<li>e72f59c quit project search thread on exit</li>
-</ul>
 
                                 
                                 <!-- Required only on API pages -->
