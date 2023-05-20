@@ -1,0 +1,13 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: Roam
+  label: Documentation
+links:
+- text: Software Releases
+  link: https://github.com/terry-longmacch/Roam/releases
+- text: GitHub Project
+  link: https://github.com/terry-longmacch/Roam
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
