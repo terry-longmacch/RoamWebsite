@@ -1,4 +1,9 @@
-## Roam Profiles
+---
+icon: tools
+order: 8
+---
+
+# Profiles
 
 Starting Roam with the `--profile` option allows you to control the folder that Roam and Config Manager will load 
 settings and projects from.
@@ -10,7 +15,7 @@ Roam will make the profile folder with the right layout to run.
 
 Usage: `roam.exe --profile C:\temp\testing`
 
-### Example
+## Example
 
 This can be used to have test vs production style setup
 

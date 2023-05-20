@@ -1,4 +1,9 @@
-# Project update and install
+---
+icon: tools
+order: 8
+---
+
+# Updating/Installing Projects
 
 As of 2.4 can now update and install projects if given a URL to an update server.  The config manager can publish projects in the right format to allow Roam the client to download them.  New projects found on the server are offered for install while existing projects can be updated.
 

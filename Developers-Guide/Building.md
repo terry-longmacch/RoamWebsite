@@ -3,7 +3,7 @@ icon: code-square
 order: 10
 ---
 
-# Building Roam From Source
+# Building From Source
 
 If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source.
 

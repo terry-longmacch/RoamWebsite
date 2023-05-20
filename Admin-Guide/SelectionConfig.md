@@ -1,12 +1,18 @@
+---
+icon: tools
+order: 8
+---
+
+# Selection Configuration
+
 Select config is a advanced section you can add to the projects in order to control the
 information shown in the info panel.
 
-
-### Setting active tools
+## Setting Active Tools
 
 You can control the tools that are available for a given layer with the following config. 
 
-### SQL Info blocks
+## SQL Info Blocks
 
 SQL Info1 and Info2 blocks are only supported currently on SQL Server and SQLite based layers.
 

@@ -1,4 +1,9 @@
-# Important API Notes
+---
+icon: alert
+order: 12
+---
+
+# Important Notes
 
 While effort is always made to maintain API compatibility sometimes things change without knowing the full effect.  If you have used the API of Roam to create plugins or add extra logic to your forms please test before deploying new versions into production.
 

@@ -1,4 +1,9 @@
-# Feature Form API
+---
+icon: gear
+order: 8
+---
+
+# Form API
 
 Each form form in Roam has the ability to have custom logic defined behind the form.  The feature form has the following methods that can be used for hooks.
 

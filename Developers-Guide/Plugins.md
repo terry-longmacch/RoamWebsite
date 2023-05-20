@@ -3,7 +3,7 @@ icon: plug
 order: 8
 ---
 
-# Roam Plugins
+# Plugins
 
 As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time. 
 

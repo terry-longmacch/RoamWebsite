@@ -1,3 +1,10 @@
+---
+icon: tools
+order: 8
+---
+
+# Info Links
+
 Roam will try to automatically handle URLs to websites and files in the info panel.  It will also try and display a file based, base64, or binary image.  If all else fails it will just display the string value.
 
 **Link format** 

@@ -1,4 +1,9 @@
-**Form Events**
+---
+icon: tools
+order: 8
+---
+
+# Form Events
 
 Roam is able to trigger another action on when widget is updated on the form .  These are known as form events and allow you to tie values on the form together.
 
@@ -21,7 +26,7 @@ All expressions are passed the current form values so you can react to values cu
 
 The `@value` variable is always set to the new value of the widget on the right hand side that triggered the event.
 
-### Only When
+## Only When
 
 Actions can also be set to trigger only when the **Only when** expression returns true. For example you might want to show a field when the value of the widget on the right hand side is greater then 100 `@value > 100`.  
 

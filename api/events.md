@@ -1,4 +1,9 @@
-# Roam Events
+---
+icon: calendar
+order: 10
+---
+
+# Events
 
 Roam events is a global API object which gives you access to common events within Roam.  The primary use of the RoamEvents object is for use with plugins or feature forms.
 

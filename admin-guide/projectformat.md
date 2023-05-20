@@ -1,3 +1,8 @@
+---
+icon: tools
+order: 8
+---
+
 # Project Format
 
 Roam projects all live in the ``projects\`` folder in the Roam install location.

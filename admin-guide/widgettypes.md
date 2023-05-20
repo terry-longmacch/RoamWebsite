@@ -1,3 +1,10 @@
+---
+icon: tools
+order: 8
+---
+
+# Widget Types
+
 All forms in Roam are made up of widgets. Most widgets allow for data entry, some are just visual (group box, horizontal line, etc).   Each widget contains its own config section under the `config:` key. 
 
 All widgets can be configured using the config manager. 

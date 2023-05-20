@@ -1,3 +1,10 @@
+---
+icon: tools
+order: 8
+---
+
+# Qt Designer Widgets
+
 This document outlines the Qt Designer widgets that match the control types in Roam if using 
 
 Designer widgets should have the objectName = fieldname

@@ -1,4 +1,9 @@
-## Updating fields using values from other layers
+---
+icon: tools
+order: 8
+---
+
+# Updating Fields
 
 When creating a new feature in Roam you can pull values from another layers using a default expression on the field.
 

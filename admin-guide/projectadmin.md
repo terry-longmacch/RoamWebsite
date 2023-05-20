@@ -1,3 +1,9 @@
+---
+icon: tools
+order: 8
+---
+
+# Project Admin
 
 The recommended way to create Roam projects is to use the Conig Manager. The config manager will allow you to create and manage new projects and forms.
 

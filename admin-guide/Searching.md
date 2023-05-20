@@ -1,3 +1,10 @@
+---
+icon: tools
+order: 8
+---
+
+# Searching
+
 Config searching using the search tab in `Roam Config Manager` and selecting the layer to enable for searching.
 
 ![logo](../images/searching.png)

@@ -1,3 +1,10 @@
+---
+icon: tools
+order: 8
+---
+
+# Syncing
+
 Syncing in Roam can be done by adding a `providers` section `project.config` (or `settings.config`).
 
 The providers section looks like the following:
