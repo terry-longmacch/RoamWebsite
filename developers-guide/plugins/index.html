@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737894046991">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737895208104">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Building Roam From Source</title>
-    <meta name="title" content="Building Roam From Source">
-    <meta name="description" content="If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source." />
+    <title>Plugins</title>
+    <meta name="title" content="Plugins">
+    <meta name="description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/dev-guide/building/" />
+    <link rel="canonical" href="/developers-guide/plugins/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/dev-guide/building/">
-    <meta property="og:title" content="Building Roam From Source">
-    <meta property="og:description" content="If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source.">
+    <meta property="og:url" content="/developers-guide/plugins/">
+    <meta property="og:title" content="Plugins">
+    <meta property="og:description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/dev-guide/building/">
-    <meta property="twitter:title" content="Building Roam From Source">
-    <meta property="twitter:description" content="If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source.">
+    <meta property="twitter:url" content="/developers-guide/plugins/">
+    <meta property="twitter:title" content="Plugins">
+    <meta property="twitter:description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.737894046991" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.737895208104" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737894046991" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737895208104" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737894046991" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737895208104" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -172,205 +172,96 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="building-roam-from-source" class="break-words">
+<doc-anchor-target id="plugins" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#building-roam-from-source">#</doc-anchor-trigger>
-        <span>Building Roam From Source</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#plugins">#</doc-anchor-trigger>
+        <span>Plugins</span>
     </h1>
 </doc-anchor-target>
-<p>If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source.</p>
-<doc-anchor-target id="initial-software-installs">
+<p>As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.</p>
+<p>Plugins live in the <code v-pre>plugins\</code> folder and are normal Python modules or packages.  The only restriction on naming is the module or package must end with <code v-pre>_plugin</code>. e.g <code v-pre>plugins\mytest_plugin.py</code></p>
+<p>The plugin API looks for the following functions in a plugin:</p>
+<ol>
+<li>A <code v-pre>pages()</code> function which returns a list of QWidgets to use as pages</li>
+<li>A <code v-pre>toolbars()</code> function which returns a list of toolbars that can be added to the bottom of the
+map window.</li>
+</ol>
+<p>A simple example plugin is as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">from PyQt4.QtGui import QWidget, QGridLayout, QLabel
+from roam.api.plugins import Page
+
+def pages():
+    return [SamplePlugin]
+    
+def toolbars():
+    return [PluginToolBar]
+    
+    
+class PluginToolBar(ToolBar):
+    def __init__(self, api, parent=None):
+        super(PluginToolBar, self).__init__(parent)
+        self.mapwindow = api.mapwindow
+        self.button = QAction(&quot;Plugin Button&quot;, self)
+        self.addAction(self.button)
+
+    def unload(self):
+        pass
+
+    def project_loaded(self, project):
+        self.project = project
+
+class SamplePlugin(QWidget, Page):
+    title = &quot;Sample Plugin&quot;
+
+    def __init__(self, api, parent=None):
+        super(LineProfile, self).__init__(parent)
+        self.setLayout(QGridLayout())</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>roam.api.plugins.Page</code> is a shortcut base class that defines default attributes. Your class can provide, or leave them undefined,
+the following attributes:</p>
+<ul>
+<li>title (string)</li>
+<li>icon (path to icon)</li>
+<li>projectpage (bool)</li>
+</ul>
+<p><code v-pre>projectpage</code> defines if the page should belong in the upper button group, False if it is a always on panel like Settings, GPS, etc.</p>
+<doc-anchor-target id="enabling-plugins">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#initial-software-installs">#</doc-anchor-trigger>
-        <span>Initial Software Installs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-plugins">#</doc-anchor-trigger>
+        <span>Enabling plugins</span>
     </h2>
 </doc-anchor-target>
-<p>In order to build Roam from source, the following software will need to be installed on the host computer.</p>
-<doc-anchor-target id="osgeo4w">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#osgeo4w">#</doc-anchor-trigger>
-        <span><a href="https://trac.osgeo.org/osgeo4w/">OSGeo4W</a></span>
-    </h4>
-</doc-anchor-target>
-<p>OSGeo4W includes software dependencies including QGIS, PyQt5, Python and GDAL.</p>
-<p>During installation select the <code v-pre>Advanced Installation</code> option.  Then choose the following options at a minimum.</p>
-<ul>
-<li>Desktop
-<ul>
-<li><code v-pre>qgis</code> or <code v-pre>qgis-ltr</code></li>
-</ul>
-</li>
-<li>Libs
-<ul>
-<li><code v-pre>gdal</code></li>
-<li><code v-pre>gdal-ecw</code></li>
-<li><code v-pre>python3-pip</code></li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="innosetup-optional">
+<p>Plugins are enabled on a per project basis.  Add:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">plugins:
+- mytest_plugin</code></pre>
+</doc-codeblock></div>
+<p>to enable the above plugin for a given project.  By default all plugins are disabled for each project unless enabled.</p>
+<p>When the project is loaded a new button, with the same text as <code v-pre>title</code>, will be added under Legend.</p>
+<doc-anchor-target id="handy-functions">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#innosetup-optional">#</doc-anchor-trigger>
-        <span><a href="https://jrsoftware.org/isdl.php">InnoSetup</a> (Optional)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#handy-functions">#</doc-anchor-trigger>
+        <span>Handy functions</span>
     </h3>
 </doc-anchor-target>
-<p>While Roam can be distributed as a ZIP file, InnoSetup can be used to automate the process of building a Windows installer.</p>
-<doc-anchor-target id="qt-linquist-optional">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qt-linquist-optional">#</doc-anchor-trigger>
-        <span>Qt Linquist (Optional)</span>
-    </h3>
-</doc-anchor-target>
-<p>If you would like to compile .ts language translation files <code v-pre>lrelease.exe</code> needs to be installed on the computer.  This program does not come packaged in OSGeo4W, but potentially might be installed using <code v-pre>pip</code>.  Otherwise installers can be found on the internet, but care should be taken to verify the source as trustworthy.</p>
-<hr />
-<doc-anchor-target id="environment-variables">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#environment-variables">#</doc-anchor-trigger>
-        <span>Environment Variables</span>
-    </h2>
-</doc-anchor-target>
-<p>A number of environment variables are specified in the <code v-pre>scripts\setenv.bat</code> script.</p>
-<p>For standard installs of the software described above, it is unlikely any changes will be required.  However, if software is installed in non-standard locations, this file may need to be edited.</p>
-<p>It is best to review this file, just to ensure it seems accurate.</p>
-<hr />
-<doc-anchor-target id="building">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#building">#</doc-anchor-trigger>
-        <span>Building</span>
-    </h2>
-</doc-anchor-target>
-<p>The main build script is <code v-pre>build.bat</code> in the base folder of the Roam source code.</p>
-<p>In Windows, open a command prompt (<code v-pre>cmd.exe</code>) and navigate to the base folder of the source code.</p>
-<p>The build script supports the following options:</p>
-<ul>
-<li>build</li>
-<li>zip</li>
-<li>installer</li>
-<li>release</li>
-<li>design</li>
-<li>watch</li>
-<li>test</li>
-<li>test-only</li>
-<li>api-docs</li>
-</ul>
-<p>These options perform the following actions.</p>
-<doc-anchor-target id="build">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#build">#</doc-anchor-trigger>
-        <span>Build</span>
-    </h3>
-</doc-anchor-target>
+<p><code v-pre>Page</code> and <code v-pre>ToolBar</code> also has auto connected <code v-pre>selection_changed</code>, <code v-pre>project_loaded</code> methods.
+Simply override and you are good to go:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build build</code></pre>
+<pre class="language-none"><code v-pre class="language-none">class SamplePlugin(QWidget, Page):
+    title = &quot;Sample Plugin&quot;
+
+    def __init__(self, api, parent=None):
+        super(LineProfile, self).__init__(parent)
+        self.setLayout(QGridLayout())
+    
+    def selection_changed(self, selection):
+        pass
+
+    def project_loaded(self, project):
+        pass</code></pre>
 </doc-codeblock></div>
-<p>or simply</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build</code></pre>
-</doc-codeblock></div>
-<p>Cleans up previous builds, downloads any required dependencies using <code v-pre>pip</code>, then compiles and builds the <code v-pre>Roam.exe</code> and <code v-pre>ConfigManager.exe</code> executables in the <code v-pre>build</code> folder.</p>
-<doc-anchor-target id="zip">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#zip">#</doc-anchor-trigger>
-        <span>Zip</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build zip</code></pre>
-</doc-codeblock></div>
-<p>Combines all of the files in the <code v-pre>build</code> folder into a zip file called <code v-pre>Roam.zip</code>, that can be found in the <code v-pre>release</code> folder.</p>
-<p>For the zip, installer and release options you can append another parameter onto the command to include version information in the new file name.</p>
-<p>For instance:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build zip &quot; 3.1 Beta&quot;</code></pre>
-</doc-codeblock></div>
-<p>will produce a file named <code v-pre>Roam 3.1 Beta.zip</code>.</p>
-<p>For all commands you can also use the greater than symbol to capture the command output in a file.</p>
-<p>For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build zip &quot; 3.1 Beta&quot; &gt; build_zip.log</code></pre>
-</doc-codeblock></div>
-<p>will capture the command output to the <code v-pre>build_zip.log</code> file.</p>
-<doc-anchor-target id="installer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installer">#</doc-anchor-trigger>
-        <span>Installer</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build installer</code></pre>
-</doc-codeblock></div>
-<p>Uses InnoSetup to compile a <code v-pre>Roam Installer.exe</code> file in the <code v-pre>release</code> folder.</p>
-<doc-anchor-target id="release">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#release">#</doc-anchor-trigger>
-        <span>Release</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build release</code></pre>
-</doc-codeblock></div>
-<p>Runs the full build.  Equivalent to running build, zip and installer individually.</p>
-<doc-anchor-target id="design">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#design">#</doc-anchor-trigger>
-        <span>Design</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build design</code></pre>
-</doc-codeblock></div>
-<p>Opens the Qt Designer application, which can be used as a graphical interface to edit the various <code v-pre>.ui</code> files.</p>
-<p>When these files are compiled using <code v-pre>build</code> a python <code v-pre>.py</code> file will be created.  These <code v-pre>.py</code> should never be edited themselves, as they will be overwritten next time <code v-pre>build</code> is run.</p>
-<doc-anchor-target id="watch">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#watch">#</doc-anchor-trigger>
-        <span>Watch</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build watch</code></pre>
-</doc-codeblock></div>
-<p>A background task that can be run while <code v-pre>.ui</code> files are being edited, in order to see changes made without having to run a complete <code v-pre>build</code>.  See section on <doc-anchor-trigger to="#running">Running</doc-anchor-trigger>.</p>
-<doc-anchor-target id="test">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test">#</doc-anchor-trigger>
-        <span>Test</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build test</code></pre>
-</doc-codeblock></div>
-<p>Performs various unit tests on the software.  Produces a html report.</p>
-<doc-anchor-target id="test-only">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-only">#</doc-anchor-trigger>
-        <span>Test-only</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build test-only</code></pre>
-</doc-codeblock></div>
-<p>Performs the same tests as <code v-pre>test</code>, but does not produce the html report.</p>
-<doc-anchor-target id="api-docs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-docs">#</doc-anchor-trigger>
-        <span>Api-docs</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">build api-docs</code></pre>
-</doc-codeblock></div>
-<p>Produces basic API reporting using the <a href="https://pdoc.dev/">Pdoc API Documentation</a>.</p>
-<hr />
-<doc-anchor-target id="running">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running">#</doc-anchor-trigger>
-        <span>Running</span>
-    </h2>
-</doc-anchor-target>
-<p>Besides running the executable created as a result of the build process, it is possible to run both Roam and ConfigManager directly from source.</p>
-<p>This can be useful in cases where changes need to be made, but you want to quickly see results, without completely re-building the application every time.  This can be used in conjunction with <code v-pre>build watch</code> when working with <code v-pre>.ui</code> files.</p>
-<p>To run Roam execute the <code v-pre>run.bat</code> script, while ConfigManager can be started using the <code v-pre>run_config.bat</code> script in the command prompt.</p>
+<p><code v-pre>selection</code> is a dict of <code v-pre>QgsVectorLayer: list-of-QgsFeatures</code></p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -380,20 +271,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../api/events/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../developers-guide/building/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Roam Events</span>
+                                                <span class="block mt-1">Building From Source</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../dev-guide/plugins/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../developers-guide/formlogic/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Roam Plugins</span>
+                                                <span class="block mt-1">Custom Form Logic</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -437,6 +328,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Building Roam From Source", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Plugins", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
