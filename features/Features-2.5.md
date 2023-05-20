@@ -41,7 +41,7 @@ query is run.
 - [API] `Form.new_feature` can take preloaded values.
 - [API] Add `zoom_to_feature` method
 
-# Config manager changes:
+## Config manager changes:
 
 - 3126d28 Add new form style option in form config UI
 - ecb78ce Add search config UI to config manager. Fix search for spaces in columns
@@ -52,9 +52,9 @@ query is run.
 - f742584 Rename Default to expression in config manager UI
 - 9a7c093 Add events widget
 
-# Minor Changes:
+## Minor Changes:
 
-# Bug fixes
+## Bug fixes
 
 [See](https://github.com/terry-longmacch/Roam/issues?q=milestone%3A2.5+is%3Aclosed) for list of closed tickets.
 

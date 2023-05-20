@@ -9,12 +9,12 @@ List of new features and changes in Roam 3.0
 
 [Release Files](https://github.com/terry-longmacch/Roam/releases/tag/3.0.8)
 
-# Changes
+## Changes
 
-# Config Manager changes:
+## Config Manager changes:
 
-# Minor Changes:
+## Minor Changes:
 
-# Bug fixes
+## Bug fixes
 
 [See](https://github.com/terry-longmacch/Roam/issues?q=milestone%3A2.5+is%3Aclosed) for list of closed tickets.

@@ -9,7 +9,7 @@ List of new features and changes in Roam 2.3
 
 [Release Files](https://github.com/terry-longmacch/Roam/releases/tag/v2.3.1)
 
-# Changes
+## Changes
 
 - Search plugin. See [Setting Up Searching](Searching) on configuring search.
 - Support for using sqlite in info panel. See [Select config](Select-Config) on using info queries
@@ -21,12 +21,10 @@ List of new features and changes in Roam 2.3
 - Skip edit buffer for saving (should make edits faster)
 - Compress Info panel buttons to single row
 
-# Notable bug fixes:
+## Notable bug fixes:
 
 - Fix saving issue with images after edits
 - Better font scaling
 - Fix GPS port selection
 - Fix loading camera if not found
 - Fix crash in info panel with MS SQL layers
-
-# API Changes
