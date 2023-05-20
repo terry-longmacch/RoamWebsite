@@ -120,7 +120,7 @@ When these files are compiled using `build` a python `.py` file will be created.
 
     build watch
 
-A background task that can be run while `.ui` files are being edited, in order to see changes made without having to run a complete `build`.  See section on [Running](#Running).
+A background task that can be run while `.ui` files are being edited, in order to see changes made without having to run a complete `build`.  See section on [Running](#running).
 
 ### Test
 

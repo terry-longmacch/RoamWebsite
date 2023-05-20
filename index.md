@@ -1,3 +1,8 @@
+---
+icon: home
+order: 1000
+---
+
 # Roam
 
 [Download the latest release (3.1 Beta)](https://github.com/terry-longmacch/Roam/releases)
