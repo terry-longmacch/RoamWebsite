@@ -1,15 +1,15 @@
 ---
-icon: tools
-order: 8
+icon: rocket
+order: 100
 ---
 
-# Project Admin
+# Getting Started
 
-The recommended way to create Roam projects is to use the Conig Manager. The config manager will allow you to create and manage new projects and forms.
+The recommended way to create Roam projects is to use the Config Manager. The Config Manager will allow you to create and manage new projects and forms.
 
-Open the Roam Config Manager using `Roam Config Manager.exe`
+Open the Config Manager using `Config Manager` from the Windows Start Menu.
 
-The tree view on the left side will list the available projects that Roam has found.  The Roam tree item will display the Roam Config Manager main page with information about Roam itself and how to get started.
+The tree view on the left side will list the available projects that Config Manager has found.  The Roam tree item will display the Config Manager main page with information about Roam itself and how to get started.
 
 ![logo](../images/config_home.png)
 
