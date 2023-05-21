@@ -7,7 +7,7 @@ order: v2.5
 
 List of new features and changes in Roam 2.5
 
-[Release Files](https://github.com/terry-longmacch/Roam/releases/tag/v2.5)
+[Release Files](https://github.com/roam-qgis/Roam/releases/tag/v2.5.2)
 
 
 ## Changes

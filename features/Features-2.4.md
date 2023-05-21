@@ -7,7 +7,7 @@ order: v2.4
 
 List of new features and changes in Roam 2.4
 
-[Release Files](https://github.com/terry-longmacch/Roam/releases/tag/v2.4)
+[Release Files](https://github.com/roam-qgis/Roam/releases/tag/2.4.2)
 
 ## Changes
 

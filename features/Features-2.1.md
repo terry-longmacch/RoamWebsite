@@ -7,7 +7,7 @@ order: v2.1
 
 List of new features and changes in Roam 2.1
 
-[Release Files](https://github.com/terry-longmacch/Roam/releases/tag/v2.1)
+[Release Files](https://github.com/roam-qgis/Roam/releases/tag/v2.1)
 
 ## Major Features
 
