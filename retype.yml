@@ -4,6 +4,8 @@ url: # Add your website address here
 branding:
   title: Roam
   label: Documentation
+  logo: images/logo.png
+  logoAlign: right
 links:
 - text: Software Releases
   link: https://github.com/terry-longmacch/Roam/releases
