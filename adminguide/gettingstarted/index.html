@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738043104749">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738044699097">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738043104749" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.738044699097" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738043104749" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738044699097" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738043104749" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738044699097" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -185,7 +185,7 @@
     </h1>
 </doc-anchor-target>
 <p>The recommended way to create Roam projects is to use the Config Manager. The Config Manager will allow you to create and manage new projects and forms.</p>
-<p>Open <mark>Config Manager</mark> by selecting <code v-pre>Config Manager</code> from the Windows Start Menu.</p>
+<p>Open Config Manager by selecting <code v-pre>Config Manager</code> from the Windows Start Menu.</p>
 <p>The tree view on the left side will list the available projects that Config Manager has found.  The Roam tree item will display the Config Manager main page with information about Roam itself and how to get started.</p>
 <p><figure class="content-center">
     <img src="../../images/config_home.png" alt="" />
@@ -232,7 +232,6 @@
         </div>
     </div>
 </div>
-<p><strong>NOTE:</strong></p>
 <doc-anchor-target id="creating-a-new-project">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-a-new-project">#</doc-anchor-trigger>
@@ -247,7 +246,7 @@
 <ol>
 <li>Select the Projects tree item.</li>
 <li>Enter the name of the new project (eg. &quot;Trees&quot;)</li>
-<li>Click the add button <img src="../../images/config_add.png" alt="" />.</li>
+<li>Click the add button. <img src="../../images/config_add.png" alt="" /></li>
 <li>Roam will create a new project in the <code v-pre>projects</code> folder.</li>
 <li>Edit the title and description.</li>
 </ol>
@@ -275,7 +274,7 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Click on the <code v-pre>Add data to data folder</code> button.  A Windows Explorer window will be open in the <code v-pre>_data</code> folder under <code v-pre>projects\{Your New Project}</code>.</li>
+<li>Click on the <code v-pre>Add data to data folder</code> button.  A Windows Explorer window will be open in the <code v-pre>_data</code> folder under <code v-pre>projects\{Your New Project}</code>. <img src="../../images/config_adddata.png" alt="" /></li>
 <li>In order to make your Roam application mobile, data sources will generally need to be accessible locally on the tablet.  Storing data in the <code v-pre>_data</code> folder is a good practice to ensure data can be accessed by Roam.</li>
 <li>Files in either <code v-pre>ESRI Shapefiles</code> or <code v-pre>Spatialite</code> file format are required for any layers that need to be edited in Roam.</li>
 </ol>
@@ -319,11 +318,11 @@
         <span>Adding select layers</span>
     </h2>
 </doc-anchor-target>
-<p>In Roam select layers are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam. Any layers not ticked in the Select Layers list will be ignored.</p>
+<p>In Roam <code v-pre>Select Layers</code> are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam.  Any layers not ticked in the <code v-pre>Select Layers</code> list will be ignored.</p>
 <ol>
-<li>Tick the box for each layer that should be selectable</li>
+<li>Tick the box for each layer that should be selectable.</li>
 </ol>
-<p>Data entry forms can also only be added for enabled select layers.  Remember to tick the layer that you would like to do data entry on.</p>
+<p>Data entry forms can also only be added for enabled <code v-pre>Select Layers</code>.  Remember to tick the layer that you would like to use for data entry.</p>
 <p><figure class="content-center">
     <img src="../../images/config_selectlayer.png" alt="" />
     <figcaption class="caption"></figcaption>
@@ -335,13 +334,15 @@
         <span>Changing the splash image</span>
     </h2>
 </doc-anchor-target>
-<p>Currently there is no way in the config manager to change the project splash however by clicking on the Open Project Folder button</p>
 <p><figure class="content-center">
     <img src="../../images/config_openfolder.png" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>you can replace the splash.png file with anything you like.  Roam uses splash.png as a convention so remember to always keep that name.</p>
+<ol>
+<li>To change the splash image for a project, click the image (initially a folded map) in the <code v-pre>Icon</code> field.</li>
+<li>Select the image you wish to replace the splash image with from your files system.  These files need to be either <code v-pre>.png</code> or <code v-pre>.svg</code> formats.  The file will be copied under the <code v-pre>project</code> folder as either <code v-pre>splash.png</code> or <code v-pre>splash.svg</code>.</li>
+</ol>
 <doc-anchor-target id="adding-a-new-form">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#adding-a-new-form">#</doc-anchor-trigger>
