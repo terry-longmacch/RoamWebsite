@@ -47,7 +47,7 @@ Roam will also run and install the update back
 
 ### Internal Workings
 
-At the current time Roam Config Manager will create a `projects` folder in the publish folder on the server.  It will also create and manager a `roam.txt` file. `roam.txt` contains the information about the projects on the server.  The config manager will manage this file for you. You should never had to edit it by hand.
+At the current time Config Manager will create a `projects` folder in the publish folder on the server.  It will also create and manager a `roam.txt` file. `roam.txt` contains the information about the projects on the server.  The config manager will manage this file for you. You should never had to edit it by hand.
 
 Here is an example of a `roam.txt`:
 
@@ -59,7 +59,3 @@ projects:
     title: Sewer Access Pit Sample
     version: 2
 ```
-
-### DMS Demo projects
-
-Demo projects from DMS can be installed into Roam using the following update server `http://demo.mapsolutions.com.au/RoamDemos/`

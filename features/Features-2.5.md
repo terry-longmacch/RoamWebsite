@@ -18,7 +18,7 @@ By default Roam will only load `project.qgs` unless `projectfile` is set in `pro
 This will only be issue if you changed the project name after using Roam Config Manager.
 
 - [App] New `--profile` command line option to load projects/plugins/logs, etc from profile folder
- See [Profiles](../admin-guide/profiles.md) for more details
+ See [Profiles](../adminguide/profiles) for more details
 - [Project] Allow `[% qgisexpression %]` in info queries.  Will be replaced before the
 query is run.
 - [Forms] Show GPS marker on map image in drawing widget
