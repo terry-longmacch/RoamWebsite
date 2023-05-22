@@ -7,7 +7,7 @@ order: 100
 
 The recommended way to create Roam projects is to use the Config Manager. The Config Manager will allow you to create and manage new projects and forms.
 
-Open ==Config Manager== by selecting `Config Manager` from the Windows Start Menu.
+Open Config Manager by selecting `Config Manager` from the Windows Start Menu.
 
 The tree view on the left side will list the available projects that Config Manager has found.  The Roam tree item will display the Config Manager main page with information about Roam itself and how to get started.
 
@@ -31,15 +31,13 @@ Selecting the Forms item will allow you to create a new data entry form for Roam
 Remember to always save your project using the Save Project button.
 !!!
 
-**NOTE:** 
-
 ## Creating a new project
 
 ![](../images/config_newproject.png)
 
 1. Select the Projects tree item.
 1. Enter the name of the new project (eg. "Trees")
-1. Click the add button ![](../images/config_add.png).
+1. Click the add button. ![](../images/config_add.png)
 1. Roam will create a new project in the `projects` folder.
 1. Edit the title and description.
 !!!warning Note
@@ -48,7 +46,7 @@ Project name must be unique.  If a project name includes a space, Config Manager
 
 ## Adding data files
 
-1. Click on the `Add data to data folder` button.  A Windows Explorer window will be open in the `_data` folder under `projects\{Your New Project}`.
+1. Click on the `Add data to data folder` button.  A Windows Explorer window will be open in the `_data` folder under `projects\{Your New Project}`. ![](../images/config_adddata.png)
 1. In order to make your Roam application mobile, data sources will generally need to be accessible locally on the tablet.  Storing data in the `_data` folder is a good practice to ensure data can be accessed by Roam.
 1. Files in either `ESRI Shapefiles` or `Spatialite` file format are required for any layers that need to be edited in Roam.
 
@@ -67,23 +65,23 @@ If you want to share data across multiple projects it is often a good idea to cr
 
 ## Adding select layers
 
-In Roam select layers are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam. Any layers not ticked in the Select Layers list will be ignored.
+In Roam `Select Layers` are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam.  Any layers not ticked in the `Select Layers` list will be ignored.
 
-1. Tick the box for each layer that should be selectable  
+1. Tick the box for each layer that should be selectable.  
 
-Data entry forms can also only be added for enabled select layers.  Remember to tick the layer that you would like to do data entry on.
+Data entry forms can also only be added for enabled `Select Layers`.  Remember to tick the layer that you would like to use for data entry.
 
 ![](../images/config_selectlayer.png)
 
 ## Changing the splash image
 
-Currently there is no way in the config manager to change the project splash however by clicking on the Open Project Folder button
-
 ![](../images/config_openfolder.png)
 
-you can replace the splash.png file with anything you like.  Roam uses splash.png as a convention so remember to always keep that name.
+1. To change the splash image for a project, click the image (initially a folded map) in the `Icon` field.
+1. Select the image you wish to replace the splash image with from your files system.  These files need to be either `.png` or `.svg` formats.  The file will be copied under the `project` folder as either `splash.png` or `splash.svg`.
 
 ## Adding a new form
+
 1. Select the Forms tree item
 2. Select the Add New button ![](../images/config_add.png)
 3. Roam will ask for a new form folder name _Like projects Roam forms are based on folders_
