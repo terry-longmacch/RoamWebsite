@@ -44,6 +44,13 @@ Remember to always save your project using the Save Project button.
 Project name must be unique.  If a project name includes a space, Config Manager will replace the space with an underscore in the folder name.
 !!!
 
+## Changing the splash image
+
+![](../images/config_openfolder.png)
+
+1. To change the splash image for a project, click the image (initially a folded map) in the `Icon` field.
+1. Select the image you wish to replace the splash image with from your files system.  These files need to be either `.png` or `.svg` formats.  The file will be copied under the `project` folder as either `splash.png` or `splash.svg`.
+
 ## Adding data files
 
 1. Click on the `Add data to data folder` button.  A Windows Explorer window will be open in the `_data` folder under `projects\{Your New Project}`. ![](../images/config_adddata.png)
@@ -65,20 +72,29 @@ If you want to share data across multiple projects it is often a good idea to cr
 
 ## Adding select layers
 
+![](../images/config_selectlayer.png)
+
 In Roam `Select Layers` are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam.  Any layers not ticked in the `Select Layers` list will be ignored.
 
 1. Tick the box for each layer that should be selectable.  
 
 Data entry forms can also only be added for enabled `Select Layers`.  Remember to tick the layer that you would like to use for data entry.
 
-![](../images/config_selectlayer.png)
+## Configuring select layers
 
-## Changing the splash image
+![](../images/config_selectlayerconfig.png)
 
-![](../images/config_openfolder.png)
+1. To configure a `Select Layer` click on the specific layer under the `Select Layer` tree.
+1. If the layer is to be used for data entry, choose the relevant options on this page.\
 
-1. To change the splash image for a project, click the image (initially a folded map) in the `Icon` field.
-1. Select the image you wish to replace the splash image with from your files system.  These files need to be either `.png` or `.svg` formats.  The file will be copied under the `project` folder as either `splash.png` or `splash.svg`.
+![](../images/config_info1.png)
+
+1. To configure selection information for a given layer, select the `Info 1` or `Info 2` option.
+1. To just show the raw data from a layer, leave `This layer` selected.
+
+![](../images/config_info1query.png)
+
+1. For greater control of the information being shown SQL queries can be written, however this is only possible with layers from either `MS SQL` or `Spatialite` sources.
 
 ## Adding a new form
 
