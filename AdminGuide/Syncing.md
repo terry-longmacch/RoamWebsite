@@ -1,6 +1,6 @@
 ---
 icon: sync
-order: 8
+order: 80
 ---
 
 # Syncing

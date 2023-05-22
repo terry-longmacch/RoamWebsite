@@ -1,6 +1,6 @@
 ---
 icon: gear
-order: 8
+order: 90
 ---
 
 # Widget Types

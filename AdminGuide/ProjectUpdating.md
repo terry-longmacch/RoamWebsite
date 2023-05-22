@@ -1,5 +1,5 @@
 ---
-icon: versions
+icon: stack
 order: 8
 ---
 
