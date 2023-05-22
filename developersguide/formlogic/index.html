@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738049378868">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738050942925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Custom Form Logic</title>
     <meta name="title" content="Custom Form Logic">
+    <meta name="description" content="Logic can be written into a form to change how it behaves under certain conditions. This logic is written in Python, and is added to the" />
 
     <!-- Canonical -->
     <link rel="canonical" href="/developersguide/formlogic/" />
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/developersguide/formlogic/">
     <meta property="og:title" content="Custom Form Logic">
+    <meta property="og:description" content="Logic can be written into a form to change how it behaves under certain conditions. This logic is written in Python, and is added to the">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/developersguide/formlogic/">
     <meta property="twitter:title" content="Custom Form Logic">
+    <meta property="twitter:description" content="Logic can be written into a form to change how it behaves under certain conditions. This logic is written in Python, and is added to the">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738049378868" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.738050942925" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738049378868" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738050942925" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738049378868" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738050942925" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -179,6 +182,64 @@
         <span>Custom Form Logic</span>
     </h1>
 </doc-anchor-target>
+<p>Logic can be written into a form to change how it behaves under certain conditions.  This logic is written in Python, and is added to the <code v-pre>form.py</code> file under the specific form&#x27;s folder.</p>
+<p>An example of this is the code below which shows or hides fields in the form depending on the value of the <code v-pre>asset_type</code> field.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;&quot;&quot;
+Template custom logic module.
+&quot;&quot;&quot;
+from roam.api import FeatureForm, RoamEvents, utils
+
+
+class Form(FeatureForm):
+    def __init__(self, *args, **kwargs):
+        super(Form, self).__init__(*args, **kwargs)
+
+    def uisetup(self):
+        &quot;&quot;&quot;
+        Called when the UI is fully constructed.  You should connect any signals here.
+        &quot;&quot;&quot;
+        self.boundwidgets['asset_type'].valuechanged.connect(self.assettypehandler)
+        pass
+
+    def assettypehandler(self, value):
+        if value == 'Sealed Road':
+            self.boundwidgets['crocodile_cracking'].hidden = False
+            self.boundwidgets['shoving'].hidden = False
+            self.boundwidgets['surface_cracks'].hidden = False
+            self.boundwidgets['stripping'].hidden = False
+            self.boundwidgets['bleeding'].hidden = False
+            self.boundwidgets['edge_break'].hidden = False
+            self.boundwidgets['edge_drop'].hidden = False
+            self.boundwidgets['gravel_depletion'].hidden = True
+        elif value == 'Gravelled Road':
+            self.boundwidgets['crocodile_cracking'].hidden = True
+            self.boundwidgets['shoving'].hidden = True
+            self.boundwidgets['surface_cracks'].hidden = True
+            self.boundwidgets['stripping'].hidden = True
+            self.boundwidgets['bleeding'].hidden = True
+            self.boundwidgets['edge_break'].hidden = True
+            self.boundwidgets['edge_drop'].hidden = True
+            self.boundwidgets['gravel_depletion'].hidden = False
+        elif value == 'Formed Road':
+            self.boundwidgets['crocodile_cracking'].hidden = True
+            self.boundwidgets['shoving'].hidden = True
+            self.boundwidgets['surface_cracks'].hidden = True
+            self.boundwidgets['stripping'].hidden = True
+            self.boundwidgets['bleeding'].hidden = True
+            self.boundwidgets['edge_break'].hidden = True
+            self.boundwidgets['edge_drop'].hidden = True
+            self.boundwidgets['gravel_depletion'].hidden = True
+        elif value == 'Unformed Road':
+            self.boundwidgets['crocodile_cracking'].hidden = True
+            self.boundwidgets['shoving'].hidden = True
+            self.boundwidgets['surface_cracks'].hidden = True
+            self.boundwidgets['stripping'].hidden = True
+            self.boundwidgets['bleeding'].hidden = True
+            self.boundwidgets['edge_break'].hidden = True
+            self.boundwidgets['edge_drop'].hidden = True
+            self.boundwidgets['gravel_depletion'].hidden = True</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->

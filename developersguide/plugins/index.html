@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738049378868">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738050942925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Plugins</title>
     <meta name="title" content="Plugins">
-    <meta name="description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time." />
+    <meta name="description" content="As of Roam 2.2, Roam supports a basic plugin model to allow adding new panels on the side at run time." />
 
     <!-- Canonical -->
     <link rel="canonical" href="/developersguide/plugins/" />
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/developersguide/plugins/">
     <meta property="og:title" content="Plugins">
-    <meta property="og:description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.">
+    <meta property="og:description" content="As of Roam 2.2, Roam supports a basic plugin model to allow adding new panels on the side at run time.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/developersguide/plugins/">
     <meta property="twitter:title" content="Plugins">
-    <meta property="twitter:description" content="As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.">
+    <meta property="twitter:description" content="As of Roam 2.2, Roam supports a basic plugin model to allow adding new panels on the side at run time.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738049378868" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.738050942925" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738049378868" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738050942925" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738049378868" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738050942925" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,13 +182,12 @@
         <span>Plugins</span>
     </h1>
 </doc-anchor-target>
-<p>As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time.</p>
+<p>As of Roam 2.2, Roam supports a basic plugin model to allow adding new panels on the side at run time.</p>
 <p>Plugins live in the <code v-pre>plugins\</code> folder and are normal Python modules or packages.  The only restriction on naming is the module or package must end with <code v-pre>_plugin</code>. e.g <code v-pre>plugins\mytest_plugin.py</code></p>
 <p>The plugin API looks for the following functions in a plugin:</p>
 <ol>
 <li>A <code v-pre>pages()</code> function which returns a list of QWidgets to use as pages</li>
-<li>A <code v-pre>toolbars()</code> function which returns a list of toolbars that can be added to the bottom of the
-map window.</li>
+<li>A <code v-pre>toolbars()</code> function which returns a list of toolbars that can be added to the bottom of the map window.</li>
 </ol>
 <p>A simple example plugin is as follows:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -222,27 +221,31 @@ class SamplePlugin(QWidget, Page):
         super(LineProfile, self).__init__(parent)
         self.setLayout(QGridLayout())</code></pre>
 </doc-codeblock></div>
-<p><code v-pre>roam.api.plugins.Page</code> is a shortcut base class that defines default attributes. Your class can provide, or leave them undefined,
+<p><code v-pre>roam.api.plugins.Page</code>:
+is a shortcut base class that defines default attributes. Your class can provide, or leave them undefined,
 the following attributes:</p>
 <ul>
 <li>title (string)</li>
 <li>icon (path to icon)</li>
 <li>projectpage (bool)</li>
 </ul>
-<p><code v-pre>projectpage</code> defines if the page should belong in the upper button group, False if it is a always on panel like Settings, GPS, etc.</p>
+<p><code v-pre>projectpage</code>
+: defines if the page should belong in the upper button group.</p>
+<p><code v-pre>False</code>
+:if it is always on a panel like Settings, GPS, etc.</p>
 <doc-anchor-target id="enabling-plugins">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-plugins">#</doc-anchor-trigger>
         <span>Enabling plugins</span>
     </h2>
 </doc-anchor-target>
-<p>Plugins are enabled on a per project basis.  Add:</p>
+<p>Plugins are enabled on a per project basis add:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">plugins:
 - mytest_plugin</code></pre>
 </doc-codeblock></div>
-<p>to enable the above plugin for a given project.  By default all plugins are disabled for each project unless enabled.</p>
-<p>When the project is loaded a new button, with the same text as <code v-pre>title</code>, will be added under Legend.</p>
+<p>To enable the above plugin for a given project.  By default all plugins are disabled for each project unless enabled.</p>
+<p>When the project is loaded a new button, with the same text as <code v-pre>title</code>, will be added under <code v-pre>Legend</code>.</p>
 <doc-anchor-target id="handy-functions">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#handy-functions">#</doc-anchor-trigger>
