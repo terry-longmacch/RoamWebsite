@@ -7,7 +7,7 @@ order: 100
 
 The recommended way to create Roam projects is to use the Config Manager. The Config Manager will allow you to create and manage new projects and forms.
 
-Open the Config Manager using `Config Manager` from the Windows Start Menu.
+Open ==Config Manager== by selecting `Config Manager` from the Windows Start Menu.
 
 The tree view on the left side will list the available projects that Config Manager has found.  The Roam tree item will display the Config Manager main page with information about Roam itself and how to get started.
 
@@ -21,29 +21,52 @@ The map item under each Project folder will load a map view of the QGIS project 
 
 ![](../images/config_map.png)
 
-Selecting the Forms item will allow you to create a new data entry form for Roam.  Data entry forms are only supported on Point layers currently, however lines and polygons are planned.  If your QGIS project doesn't include any layers a note will be displayed explaining what to do.
+Selecting the Forms item will allow you to create a new data entry form for Roam.  Data entry forms are supported for vector point, line and polygon layers.  If your QGIS project doesn't include any layers a note will be displayed explaining what to do.
 
 ![](../images/config_formlist.png)
 
 ![](../images/config_form.png)
 
-**NOTE** Remember to always save your project using the Save Project button.
+!!!warning Note
+Remember to always save your project using the Save Project button.
+!!!
 
-# Creating a new project
+**NOTE:** 
 
-1. Select the Projects tree item
-2. Click the add button ![](../images/config_add.png)
-3. The config manager will ask you for a new folder name. _All Roam projects are stored as folders in the `projects` folder. Folder names must be unique_
-4. Roam will create a new project in the `projects` folder.
-5. Edit the title and description.
+## Creating a new project
+
+![](../images/config_newproject.png)
+
+1. Select the Projects tree item.
+1. Enter the name of the new project (eg. "Trees")
+1. Click the add button ![](../images/config_add.png).
+1. Roam will create a new project in the `projects` folder.
+1. Edit the title and description.
+!!!warning Note
+Project name must be unique.  If a project name includes a space, Config Manager will replace the space with an underscore in the folder name.
+!!!
+
+## Adding data files
+
+1. Click on the `Add data to data folder` button.  A Windows Explorer window will be open in the `_data` folder under `projects\{Your New Project}`.
+1. In order to make your Roam application mobile, data sources will generally need to be accessible locally on the tablet.  Storing data in the `_data` folder is a good practice to ensure data can be accessed by Roam.
+1. Files in either `ESRI Shapefiles` or `Spatialite` file format are required for any layers that need to be edited in Roam.
+
+!!!success
+If you want to share data across multiple projects it is often a good idea to create a `_data` folder directly under the `projects` directory.  This avoids duplicating files on the tablet.
+!!!
 
 ## Adding QGIS layers
-1. Select the project node.  Will be selected if you created a new project.
-2. Click the Open In QGIS button ![](../images/config_openqgis.png).  Config manager will watch for changes to the QGIS project.
-3. QGIS will be loaded and you are able to add your own layers. _Remember to use the Save.. Project button in QGIS_
-4. Tell Config Manager to reload the QGIS project.
+
+1. Select the specific project node.  This will automatically be selected if you created a new project.
+1. Click the `Open project in QGIS` button. ![](../images/config_openqgis.png).
+1. Config Manager will watch for changes to the QGIS project.
+1. QGIS will be loaded and you are able to add your own layers. **Remember to use the Save.. Project button in QGIS.**
+1. Tell Config Manager to reload the QGIS project.
+![](../images/config_qgis_reload.png)
 
 ## Adding select layers
+
 In Roam select layers are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam. Any layers not ticked in the Select Layers list will be ignored.
 
 1. Tick the box for each layer that should be selectable  
@@ -68,6 +91,7 @@ you can replace the splash.png file with anything you like.  Roam uses splash.pn
 5. Select the layer for data entry
 
 ### Adding attributes to the form
+
 1. Select the Add Attribute button
 2. Fill in the relevent fields for each attribute added
 3. Select the contol type.
