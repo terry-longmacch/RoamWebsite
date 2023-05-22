@@ -17,11 +17,11 @@ QGIS is **not** required to be installed on the users machines.
 
 ![a](images/release.PNG)
 
-![logo](images/release-capture.png)
+![](images/release-capture.png)
 
 ## Quick Start
 
 - Download and install the latest [release](https://github.com/terry-longmacch/Roam/releases)
-- Run `Roam Config Manager.exe`
+- Run `Config Manager`
 - Create a project and some forms by following the [creating a project guide](admin-guide/projectadmin.md)
 - Run `Roam.exe`
