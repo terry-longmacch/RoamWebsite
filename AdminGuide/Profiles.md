@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: person
 order: 8
 ---
 

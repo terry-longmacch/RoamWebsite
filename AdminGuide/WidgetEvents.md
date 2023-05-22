@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: paper-airplane
 order: 8
 ---
 

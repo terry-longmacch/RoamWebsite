@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: search
 order: 8
 ---
 

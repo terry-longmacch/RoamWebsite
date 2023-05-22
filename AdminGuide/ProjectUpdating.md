@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: versions
 order: 8
 ---
 

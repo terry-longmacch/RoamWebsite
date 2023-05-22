@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: device-camera
 order: 8
 ---
 

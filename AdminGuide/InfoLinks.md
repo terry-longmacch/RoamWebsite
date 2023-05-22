@@ -1,5 +1,5 @@
 ---
-icon: tools
+icon: info
 order: 8
 ---
 
