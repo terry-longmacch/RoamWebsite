@@ -7,7 +7,7 @@ order: 10
 
 If you are planning on doing any development work on Roam or are wanting to stay current with recent changes you will need to build from source.
 
-## Initial Software Installs
+## Initial software installs
 
 In order to build Roam from source, the following software will need to be installed on the host computer.
 
@@ -34,7 +34,7 @@ If you would like to compile .ts language translation files `lrelease.exe` needs
 
 ---
 
-## Environment Variables
+## Environment variables
 
 A number of environment variables are specified in the `scripts\setenv.bat` script.
 

@@ -5,15 +5,14 @@ order: 8
 
 # Plugins
 
-As of Roam 2.2, Roam will support a basic plugin model to allow adding new panels on the side at run time. 
+As of Roam 2.2, Roam supports a basic plugin model to allow adding new panels on the side at run time. 
 
 Plugins live in the `plugins\` folder and are normal Python modules or packages.  The only restriction on naming is the module or package must end with `_plugin`. e.g `plugins\mytest_plugin.py`
 
 The plugin API looks for the following functions in a plugin:
 
 1. A `pages()` function which returns a list of QWidgets to use as pages
-1. A `toolbars()` function which returns a list of toolbars that can be added to the bottom of the
-   map window.
+1. A `toolbars()` function which returns a list of toolbars that can be added to the bottom of the map window.
 
 A simple example plugin is as follows:
 
@@ -49,27 +48,32 @@ class SamplePlugin(QWidget, Page):
         self.setLayout(QGridLayout())
 ```
 
-`roam.api.plugins.Page` is a shortcut base class that defines default attributes. Your class can provide, or leave them undefined,
+`roam.api.plugins.Page`:
+is a shortcut base class that defines default attributes. Your class can provide, or leave them undefined,
  the following attributes:
 
 * title (string)
 * icon (path to icon)
 * projectpage (bool)
 
-`projectpage` defines if the page should belong in the upper button group, False if it is a always on panel like Settings, GPS, etc.
+`projectpage`
+: defines if the page should belong in the upper button group.
+
+`False`
+:if it is always on a panel like Settings, GPS, etc.
 
 ## Enabling plugins
 
-Plugins are enabled on a per project basis.  Add:
+Plugins are enabled on a per project basis add:
 
 ```
 plugins:
 - mytest_plugin
 ```
 
-to enable the above plugin for a given project.  By default all plugins are disabled for each project unless enabled.
+To enable the above plugin for a given project.  By default all plugins are disabled for each project unless enabled.
 
-When the project is loaded a new button, with the same text as `title`, will be added under Legend.
+When the project is loaded a new button, with the same text as `title`, will be added under `Legend`.
 
 ### Handy functions 
 
