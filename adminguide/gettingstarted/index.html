@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738044699097">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738046664300">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738044699097" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.738046664300" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738044699097" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738046664300" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738044699097" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738046664300" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -267,6 +267,21 @@
         </div>
     </div>
 </div>
+<doc-anchor-target id="changing-the-splash-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-the-splash-image">#</doc-anchor-trigger>
+        <span>Changing the splash image</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../../images/config_openfolder.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<ol>
+<li>To change the splash image for a project, click the image (initially a folded map) in the <code v-pre>Icon</code> field.</li>
+<li>Select the image you wish to replace the splash image with from your files system.  These files need to be either <code v-pre>.png</code> or <code v-pre>.svg</code> formats.  The file will be copied under the <code v-pre>project</code> folder as either <code v-pre>splash.png</code> or <code v-pre>splash.svg</code>.</li>
+</ol>
 <doc-anchor-target id="adding-data-files">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#adding-data-files">#</doc-anchor-trigger>
@@ -318,30 +333,47 @@
         <span>Adding select layers</span>
     </h2>
 </doc-anchor-target>
-<p>In Roam <code v-pre>Select Layers</code> are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam.  Any layers not ticked in the <code v-pre>Select Layers</code> list will be ignored.</p>
-<ol>
-<li>Tick the box for each layer that should be selectable.</li>
-</ol>
-<p>Data entry forms can also only be added for enabled <code v-pre>Select Layers</code>.  Remember to tick the layer that you would like to use for data entry.</p>
 <p><figure class="content-center">
     <img src="../../images/config_selectlayer.png" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<doc-anchor-target id="changing-the-splash-image">
+<p>In Roam <code v-pre>Select Layers</code> are layers that are enabled for selection for using the select tool and will have attribute information displayed in Roam.  Any layers not ticked in the <code v-pre>Select Layers</code> list will be ignored.</p>
+<ol>
+<li>Tick the box for each layer that should be selectable.</li>
+</ol>
+<p>Data entry forms can also only be added for enabled <code v-pre>Select Layers</code>.  Remember to tick the layer that you would like to use for data entry.</p>
+<doc-anchor-target id="configuring-select-layers">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-the-splash-image">#</doc-anchor-trigger>
-        <span>Changing the splash image</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-select-layers">#</doc-anchor-trigger>
+        <span>Configuring select layers</span>
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="../../images/config_openfolder.png" alt="" />
+    <img src="../../images/config_selectlayerconfig.png" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <ol>
-<li>To change the splash image for a project, click the image (initially a folded map) in the <code v-pre>Icon</code> field.</li>
-<li>Select the image you wish to replace the splash image with from your files system.  These files need to be either <code v-pre>.png</code> or <code v-pre>.svg</code> formats.  The file will be copied under the <code v-pre>project</code> folder as either <code v-pre>splash.png</code> or <code v-pre>splash.svg</code>.</li>
+<li>To configure a <code v-pre>Select Layer</code> click on the specific layer under the <code v-pre>Select Layer</code> tree.</li>
+<li>If the layer is to be used for data entry, choose the relevant options on this page.\</li>
+</ol>
+<p><figure class="content-center">
+    <img src="../../images/config_info1.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<ol>
+<li>To configure selection information for a given layer, select the <code v-pre>Info 1</code> or <code v-pre>Info 2</code> option.</li>
+<li>To just show the raw data from a layer, leave <code v-pre>This layer</code> selected.</li>
+</ol>
+<p><figure class="content-center">
+    <img src="../../images/config_info1query.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<ol>
+<li>For greater control of the information being shown SQL queries can be written, however this is only possible with layers from either <code v-pre>MS SQL</code> or <code v-pre>Spatialite</code> sources.</li>
 </ol>
 <doc-anchor-target id="adding-a-new-form">
     <h2>
