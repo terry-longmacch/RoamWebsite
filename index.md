@@ -5,7 +5,7 @@ order: 1000
 
 <div id="image-container"></div>
 
-<script src="script.js"></script>
+<script src="darktheme.js"></script>
 
 New Testing
 
