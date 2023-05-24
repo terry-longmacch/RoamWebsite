@@ -22,6 +22,7 @@ During installation select the `Advanced Installation` option.  Then choose the 
 - Libs
     - `gdal`
     - `gdal-ecw`
+    - `gdal-mss`
     - `python3-pip`
 
 ### [InnoSetup](https://jrsoftware.org/isdl.php) (Optional)

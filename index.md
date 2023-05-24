@@ -3,7 +3,8 @@ icon: home
 order: 1000
 ---
 
-# ![](images/roam-icon.png)
+# ![](images/roam-icon.png#gh-dark-mode-only)
+# ![](images/roam-icon-dark.png#gh-light-mode-only)
 
 [Download the latest release (3.1 Beta)](https://github.com/terry-longmacch/Roam/releases)
 
