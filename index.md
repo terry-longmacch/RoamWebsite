@@ -1,13 +1,7 @@
 ---
 icon: home
 order: 1000
-scripts:
-  - static/darktheme.js
 ---
-
-:::image-container :::
-
-New Testing 3
 
 # ![](images/roam-icon.png)
 
