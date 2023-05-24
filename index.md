@@ -3,8 +3,33 @@ icon: home
 order: 1000
 ---
 
-# ![](images/roam-icon.png#gh-dark-mode-only)
-# ![](images/roam-icon-dark.png#gh-light-mode-only)
+<style>
+    /* Default image */
+    .image-container {
+        background-image: url('images/roam-icon.png');
+    }
+
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+    .image-container {
+        background-image: url('images/roam-icon-dark.png');
+    }
+    }
+
+    /* Light theme */
+    @media (prefers-color-scheme: light) {
+    .image-container {
+        background-image: url('images/roam-icon.png');
+    }
+    }
+</style>
+
+:::image-container
+:::
+
+Testing
+
+# ![](images/roam-icon.png)
 
 [Download the latest release (3.1 Beta)](https://github.com/terry-longmacch/Roam/releases)
 
