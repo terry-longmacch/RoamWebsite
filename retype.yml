@@ -5,7 +5,7 @@ branding:
   title: Roam
   label: Documentation
   logo: images/logo.png
-  logoAlign: right
+  logoAlign: left
 favicon: static/favicon.ico
 links:
 - text: Software Releases
