@@ -5,7 +5,7 @@ order: 1000
 
 :::image-container :::
 
-:::code source="./darktheme.js" :::
+<script src="./darktheme.js"></script>
 
 New Testing
 
