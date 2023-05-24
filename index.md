@@ -1,13 +1,13 @@
 ---
 icon: home
 order: 1000
+scripts:
+  - darktheme.js
 ---
 
 :::image-container :::
 
-<script src="./darktheme.js"></script>
-
-New Testing
+New Testing 2
 
 # ![](images/roam-icon.png)
 
