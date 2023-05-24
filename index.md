@@ -2,12 +2,12 @@
 icon: home
 order: 1000
 scripts:
-  - darktheme.js
+  - static/darktheme.js
 ---
 
 :::image-container :::
 
-New Testing 2
+New Testing 3
 
 # ![](images/roam-icon.png)
 

@@ -6,6 +6,7 @@ branding:
   label: Documentation
   logo: images/logo.png
   logoAlign: right
+favicon: static/favicon.ico
 links:
 - text: Software Releases
   link: https://github.com/terry-longmacch/Roam/releases
