@@ -3,31 +3,11 @@ icon: home
 order: 1000
 ---
 
-<style>
-    /* Default image */
-    .image-container {
-        background-image: url('images/roam-icon.png');
-    }
+<div id="image-container"></div>
 
-    /* Dark theme */
-    @media (prefers-color-scheme: dark) {
-    .image-container {
-        background-image: url('images/roam-icon-dark.png');
-    }
-    }
+<script src="script.js"></script>
 
-    /* Light theme */
-    @media (prefers-color-scheme: light) {
-    .image-container {
-        background-image: url('images/roam-icon.png');
-    }
-    }
-</style>
-
-:::image-container
-:::
-
-Testing
+New Testing
 
 # ![](images/roam-icon.png)
 
