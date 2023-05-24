@@ -3,9 +3,9 @@ icon: home
 order: 1000
 ---
 
-<div id="image-container"></div>
+:::image-container :::
 
-<script src="darktheme.js"></script>
+:::code source="./darktheme.js" :::
 
 New Testing
 
